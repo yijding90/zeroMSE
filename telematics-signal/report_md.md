@@ -179,7 +179,7 @@ a common duration and vice versa.
 Below is distribution of final scores selected score indication matched
 trips between phone and odb. The score ranges from 25 to 317
 
-![](report_md_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+![](report_md_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
 ##### 6.Calculate common trip timeframe for each matched trip
 
@@ -201,22 +201,22 @@ timestamp. Below are some examples.
 Below is the pair mobile\_26 vs obd\_34 which returned best matching
 result. There are some disagreements in the tails
 
-![](report_md_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](report_md_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
 Below is the pair ranked number 5 best.
 
-![](report_md_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](report_md_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
 Here is a pair with lower score rank. The low rank seems to be caused by
 inconsistency in time length for the largest interval in the middle. The
 mobile phone may fail to capture some motion in this case.
 
-![](report_md_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](report_md_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 Another example with low matching score but passed 25 benchmark. In this
 case, the signal from phone is much noisier.
 
-![](report_md_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+![](report_md_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
 ##### Take aways
 
