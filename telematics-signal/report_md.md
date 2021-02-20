@@ -126,15 +126,10 @@ less \<= 25*km/hr* and time length \<= 40*sec* will be filtered out.
 
 ##### 4\. Define interval similarity score
 
-Simularity score is calculated using 3 varibles: **speedMatchScore**,
+Similarity score is calculated using 3 variables: **speedMatchScore**,
 **lengthDiff** and **lengthMatchInd** defined as follow:
 
-\[speedMatchScore = 1/5 * \sum_{i}^{10, 30, 50, 70, 90}\left(abs(Speed_{mobileIthPercentile} - Speed_{obdIthPercentile} \right))\]
-
-\[lengthDiff = abs(Length_{mobile} - Length_{obd}) / Length_{mobile}\]
-\[lengthMatchInd = ifelse(lengthDiff > 0.05, 0, 1)\]
-
-\[intervalMatchScore = e^{ 5 - speedMatchScore - 5 * lengthDiff} * lengthMatchInd\]
+![](C:/Users/yijdi/OneDrive/Desktop/trips_data/formula.png)<!-- -->
 
 The intuition behind definition of the formulas are:
 
@@ -182,7 +177,7 @@ a common duration and vice versa.
 
 Below is distribution of final scores selected score indication matched
 trips between phone and odb. The score ranges from 25 to 317
-![](report_md_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+![](report_md_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
 ##### 6.Calculate common trip timeframe for each matched trip
 
@@ -204,22 +199,22 @@ timestamp. Below are some examples.
 Below is the pair mobile\_26 vs obd\_34 which returned best matching
 result. There are some disagreements in the tails
 
-![](report_md_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+![](report_md_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
 Below is the pair ranked number 5 best.
 
-![](report_md_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](report_md_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 Here is a pair with lower score rank. The low rank seems to be caused by
 inconsistency in time length for the largest interval in the middle. The
 mobile phone may fail to capture some motion in this case.
 
-![](report_md_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](report_md_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
 Another example with low matching score but passed 25 benchmark. In this
 case, the signal from phone is much noisier.
 
-![](report_md_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](report_md_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
 
 ##### Take aways
 

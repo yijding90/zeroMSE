@@ -93,15 +93,11 @@ If both statistics are very similar between 2 intervals, they are likely to be a
 
 ##### 4. Define interval similarity score
 
-Simularity score is calculated using 3 varibles: **speedMatchScore**, **lengthDiff** and **lengthMatchInd** defined as follow:
+Similarity score is calculated using 3 variables: **speedMatchScore**, **lengthDiff** and **lengthMatchInd** defined as follow:
 
-$$speedMatchScore = 1/5 * \sum_{i}^{10, 30, 50, 70, 90}\left(abs(Speed_{mobileIthPercentile} - Speed_{obdIthPercentile} \right))$$
-  
-
-$$lengthDiff = abs(Length_{mobile} - Length_{obd}) / Length_{mobile}$$
-$$lengthMatchInd = ifelse(lengthDiff > 0.05, 0, 1)$$
-
-$$intervalMatchScore = e^{ 5 - speedMatchScore - 5 * lengthDiff} * lengthMatchInd$$
+```{r, echo=FALSE}
+knitr::include_graphics("C:/Users/yijdi/OneDrive/Desktop/trips_data/formula.png")
+```
 
 
 The intuition behind definition of the formulas are:
