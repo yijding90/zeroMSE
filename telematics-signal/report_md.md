@@ -1,14 +1,9 @@
 ---
 title: "Pair telematics signal between mobile phone and OBD" 
-author: "Yijia Ding"
 output: 
   html_document:
     keep_md: true
 ---
-
-
-
-
 
 
 ### <span style="color:blue">Problem Statement</span>
@@ -33,6 +28,7 @@ each trip collected from the OBDII plug-in device
 data for each trip collected from the phone
 
 Below is preview of the mobile trip data(top) and obd trip data(bottom)
+
 
 
 ```

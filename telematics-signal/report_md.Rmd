@@ -1,21 +1,9 @@
 ---
 title: "Pair telematics signal between mobile phone and OBD" 
-author: "Yijia Ding"
 output: 
   html_document:
     keep_md: true
 ---
-
-
-
-```{r, warning=FALSE, echo=FALSE, message=FALSE}
-library(dplyr)
-library(ggplot2)
-library(ggpubr)
-
-options(dplyr.summarise.inform = FALSE)
-load("C:/Users/yijdi/OneDrive/Desktop/trips_data/env.RData")
-```
 
 
 ### <span style="color:blue">Problem Statement</span>
@@ -40,6 +28,14 @@ each trip collected from the OBDII plug-in device
 data for each trip collected from the phone
 
 Below is preview of the mobile trip data(top) and obd trip data(bottom)
+```{r, warning=FALSE, echo=FALSE, message=FALSE}
+library(dplyr)
+library(ggplot2)
+library(ggpubr)
+
+options(dplyr.summarise.inform = FALSE)
+load("C:/Users/yijdi/OneDrive/Desktop/trips_data/env.RData")
+```
 
 ```{r, warning=FALSE, echo=FALSE}
 head(mobileData %>% select(trip_id, timestamp, speed))
