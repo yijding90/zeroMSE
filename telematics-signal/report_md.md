@@ -129,7 +129,7 @@ less \<= 25*km/hr* and time length \<= 40*sec* will be filtered out.
 Similarity score is calculated using 3 variables: **speedMatchScore**,
 **lengthDiff** and **lengthMatchInd** defined as follow:
 
-![](C:/Users/yijdi/OneDrive/Desktop/trips_data/formula.png)<!-- -->
+<img src="C:/Users/yijdi/OneDrive/Desktop/trips_data/formula.png" width="726" />
 
 The intuition behind definition of the formulas are:
 

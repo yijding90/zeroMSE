@@ -31,6 +31,7 @@ Below is preview of the mobile trip data(top) and obd trip data(bottom)
 ```{r, warning=FALSE, echo=FALSE， include=FALSE}
 library(dplyr)
 library(ggpubr)
+library(knitr)
 options(dplyr.summarise.inform = FALSE)
 
 load("C:/Users/yijdi/OneDrive/Desktop/trips_data/env.RData")
@@ -96,7 +97,7 @@ If both statistics are very similar between 2 intervals, they are likely to be a
 Similarity score is calculated using 3 variables: **speedMatchScore**, **lengthDiff** and **lengthMatchInd** defined as follow:
 
 ```{r, echo=FALSE}
-knitr::include_graphics("C:/Users/yijdi/OneDrive/Desktop/trips_data/formula.png")
+include_graphics("C:/Users/yijdi/OneDrive/Desktop/trips_data/formula.png")
 ```
 
 
