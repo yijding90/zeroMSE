@@ -1,5 +1,5 @@
 ---
-title: Pair telematics signal between mobile phone and OBD 
+title: "Pair telematics signal between mobile phone and OBD" 
 author: "Yijia Ding"
 output: 
   html_document:
