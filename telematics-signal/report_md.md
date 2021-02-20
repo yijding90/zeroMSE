@@ -178,6 +178,7 @@ a common duration and vice versa.
 
 Below is distribution of final scores selected score indication matched
 trips between phone and odb. The score ranges from 25 to 317
+
 ![](report_md_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
 ##### 6.Calculate common trip timeframe for each matched trip
