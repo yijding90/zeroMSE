@@ -130,7 +130,7 @@ Similarity score is calculated using 3 variables: **speedMatchScore**,
 **lengthDiff** and **lengthMatchInd** defined as follow:
 
 ![](report_md_files/figure-gfm/temp.png)<!-- -->
-<img src="C:/Users/yijdi/OneDrive/Desktop/trips_data/temp.png" width="726" />
+
 
 The intuition behind definition of the formulas are:
 
