@@ -1,9 +1,6 @@
 ---
 title: "Pair telematics signal between mobile phone and OBD" 
-output: 
-  html_document:
-    pandoc_args: --webtex
-    keep_md: true
+output: rmarkdown::github_document
 ---
 
 
