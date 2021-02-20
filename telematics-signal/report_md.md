@@ -1,10 +1,12 @@
 ---
-title: <span style="color:blue">Pair telematics signal between mobile phone and OBD </span>
+title: Pair telematics signal between mobile phone and OBD 
 author: "Yijia Ding"
 output: 
   html_document:
     keep_md: true
 ---
+
+
 
 
 
@@ -134,9 +136,11 @@ We can better visualize the matched trips in single plots using common timestamp
 
 Below is the pair mobile_26 vs obd_34 which returned best matching result. There are some disagreements
 in the tails
+
 ![](report_md_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
 
 Below is the pair ranked number 5 best.
+
 ![](report_md_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
 
 Here is a pair with lower score rank. The low rank seems to be caused by inconsistency in time length for the largest interval in the middle. The mobile phone may fail to capture some motion in this case. 
@@ -145,6 +149,7 @@ Here is a pair with lower score rank. The low rank seems to be caused by inconsi
 
 Another example with low matching score but passed 25 benchmark. In this case, the signal from
 phone is much noisier. 
+
 ![](report_md_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
 
 ##### Take aways   

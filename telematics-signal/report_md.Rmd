@@ -1,10 +1,12 @@
 ---
-title: <span style="color:blue">Pair telematics signal between mobile phone and OBD </span>
+title: Pair telematics signal between mobile phone and OBD 
 author: "Yijia Ding"
 output: 
   html_document:
     keep_md: true
 ---
+
+
 
 ```{r, warning=FALSE, echo=FALSE, message=FALSE}
 library(dplyr)
@@ -144,11 +146,13 @@ We can better visualize the matched trips in single plots using common timestamp
 
 Below is the pair mobile_26 vs obd_34 which returned best matching result. There are some disagreements
 in the tails
+
 ```{r, warning=FALSE, echo=FALSE}
 combinedTripPlot(commonTripTimeframe, mobileData, obdData, 26)
 ```
 
 Below is the pair ranked number 5 best.
+
 ```{r, warning=FALSE, echo=FALSE}
 combinedTripPlot(commonTripTimeframe, mobileData, obdData, 1)
 ```
@@ -161,6 +165,7 @@ combinedTripPlot(commonTripTimeframe, mobileData, obdData, 25)
 
 Another example with low matching score but passed 25 benchmark. In this case, the signal from
 phone is much noisier. 
+
 ```{r, warning=FALSE, echo=FALSE}
 combinedTripPlot(commonTripTimeframe, mobileData, obdData, 24)
 ```
