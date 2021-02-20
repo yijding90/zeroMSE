@@ -28,11 +28,16 @@ data for each trip collected from the phone
 Below is preview of the mobile trip data(top) and obd trip data(bottom)
 
 
-```{r, warning=FALSE, echo=FALSE}
+```{r, warning=FALSE, echo=FALSE， include=FALSE}
 library(dplyr)
 library(ggpubr)
+options(dplyr.summarise.inform = FALSE)
 
 load("C:/Users/yijdi/OneDrive/Desktop/trips_data/env.RData")
+
+```
+
+```{r, warning=FALSE, echo=FALSE}
 head(mobileData %>% select(trip_id, timestamp, speed))
 head(obdData %>% select(trip_id, timestamp, speed))
 ```

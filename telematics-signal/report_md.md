@@ -34,19 +34,6 @@ running time and easy to read.
 
 Below is preview of the mobile trip data(top) and obd trip data(bottom)
 
-    ## 
-    ## Attaching package: 'dplyr'
-
-    ## The following objects are masked from 'package:stats':
-    ## 
-    ##     filter, lag
-
-    ## The following objects are masked from 'package:base':
-    ## 
-    ##     intersect, setdiff, setequal, union
-
-    ## Loading required package: ggplot2
-
     ##                                trip_id           timestamp  speed
     ## 1 5305845D-61F4-40EB-BE97-F304DFFD4C36 2017-05-13 09:58:41 33.804
     ## 2 5305845D-61F4-40EB-BE97-F304DFFD4C36 2017-05-13 09:58:42 31.788
@@ -69,7 +56,7 @@ To better visualize the speed variation within a trip to understand the
 complication, below are line plots between timestamp and speed change
 from sample trips for both obd and phone.
 
-![](report_md_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+![](report_md_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
 
 Following complications are identified:
 
@@ -195,7 +182,7 @@ a common duration and vice versa.
 
 Below is distribution of final scores selected score indication matched
 trips between phone and odb. The score ranges from 25 to 317
-![](report_md_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+![](report_md_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
 ##### 6.Calculate common trip timeframe for each matched trip
 
@@ -217,30 +204,22 @@ timestamp. Below are some examples.
 Below is the pair mobile\_26 vs obd\_34 which returned best matching
 result. There are some disagreements in the tails
 
-    ## `summarise()` ungrouping output (override with `.groups` argument)
-
-![](report_md_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+![](report_md_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
 Below is the pair ranked number 5 best.
 
-    ## `summarise()` ungrouping output (override with `.groups` argument)
-
-![](report_md_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+![](report_md_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
 Here is a pair with lower score rank. The low rank seems to be caused by
 inconsistency in time length for the largest interval in the middle. The
 mobile phone may fail to capture some motion in this case.
 
-    ## `summarise()` ungrouping output (override with `.groups` argument)
-
-![](report_md_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](report_md_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 Another example with low matching score but passed 25 benchmark. In this
 case, the signal from phone is much noisier.
 
-    ## `summarise()` ungrouping output (override with `.groups` argument)
-
-![](report_md_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](report_md_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
 ##### Take aways
 
