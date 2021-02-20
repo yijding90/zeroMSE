@@ -6,14 +6,7 @@ output:
     keep_md: true
 ---
 
-```{r, warning=FALSE, echo=FALSE}
-library(dplyr)
-library(ggplot2)
-library(ggpubr)
 
-options(dplyr.summarise.inform = FALSE)
-load("C:/Users/yijdi/OneDrive/Desktop/trips_data/env.RData")
-```
 
 
 ### <span style="color:blue">Problem Statement</span>
@@ -39,9 +32,25 @@ data for each trip collected from the phone
 
 Below is preview of the mobile trip data(top) and obd trip data(bottom)
 
-```{r, warning=FALSE, echo=FALSE}
-head(mobileData %>% select(trip_id, timestamp, speed))
-head(obdData %>% select(trip_id, timestamp, speed))
+
+```
+##                                trip_id           timestamp  speed
+## 1 5305845D-61F4-40EB-BE97-F304DFFD4C36 2017-05-13 09:58:41 33.804
+## 2 5305845D-61F4-40EB-BE97-F304DFFD4C36 2017-05-13 09:58:42 31.788
+## 3 5305845D-61F4-40EB-BE97-F304DFFD4C36 2017-05-13 09:58:43 28.980
+## 4 5305845D-61F4-40EB-BE97-F304DFFD4C36 2017-05-13 09:58:43 29.052
+## 5 5305845D-61F4-40EB-BE97-F304DFFD4C36 2017-05-13 09:58:44 28.728
+## 6 5305845D-61F4-40EB-BE97-F304DFFD4C36 2017-05-13 09:58:45 27.072
+```
+
+```
+##                trip_id timestamp speed
+## 1 trip_TAU99985_000000     1.141    50
+## 2 trip_TAU99985_000000     2.156    50
+## 3 trip_TAU99985_000000     3.116     0
+## 4 trip_TAU99985_000000     4.153     0
+## 5 trip_TAU99985_000000     5.167     0
+## 6 trip_TAU99985_000000     6.144     0
 ```
 
 ### <span style="color:blue">Complications</span>
@@ -49,16 +58,7 @@ head(obdData %>% select(trip_id, timestamp, speed))
 To better visualize the speed variation within a trip to understand the complication, below are line plots between timestamp and speed change from sample trips for both obd and phone.
 
 
-```{r, warning=FALSE, echo=FALSE}
-ggarrange(
-  plot_trip(mobileData, 1, "mobile"), 
-  plot_trip(mobileData, 20, "mobile"),
-  plot_trip(mobileData, 5, "obd"),
-  plot_trip(mobileData, 15, "obd"),
-  ncol = 2, nrow = 2
-)
-
-```
+![](report_md_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
 
 Following complications are identified:
 
@@ -121,17 +121,7 @@ Iterate through both trips train data, and calculate matching score of all pairs
 
 
 Below is distribution of final scores selected score indication matched trips between phone and odb. The score ranges from  25 to 317
-```{r, warning=FALSE, echo=FALSE}
-ggplot(
-  tripScorePlotDf,
-  aes(reorder(name, -score)) 
-) + geom_col(aes(y = score), fill = 'orange' ) +
-  theme(axis.text.x = element_text(angle = 90))+
-  labs(
-    title = "distribution of final trip matching score: mobile vs obd "
-  )
-
-```
+![](report_md_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
 
 
 ##### 6.Calculate common trip timeframe for each matched trip
@@ -144,26 +134,18 @@ We can better visualize the matched trips in single plots using common timestamp
 
 Below is the pair mobile_26 vs obd_34 which returned best matching result. There are some disagreements
 in the tails
-```{r, warning=FALSE, echo=FALSE}
-combinedTripPlot(commonTripTimeframe, mobileData, obdData, 26)
-```
+![](report_md_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
 
 Below is the pair ranked number 5 best.
-```{r, warning=FALSE, echo=FALSE}
-combinedTripPlot(commonTripTimeframe, mobileData, obdData, 1)
-```
+![](report_md_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
 
 Here is a pair with lower score rank. The low rank seems to be caused by inconsistency in time length for the largest interval in the middle. The mobile phone may fail to capture some motion in this case. 
 
-```{r, warning=FALSE, echo=FALSE}
-combinedTripPlot(commonTripTimeframe, mobileData, obdData, 25)
-```
+![](report_md_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
 
 Another example with low matching score but passed 25 benchmark. In this case, the signal from
 phone is much noisier. 
-```{r, warning=FALSE, echo=FALSE}
-combinedTripPlot(commonTripTimeframe, mobileData, obdData, 24)
-```
+![](report_md_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
 
 ##### Take aways   
 - the matching algorithms can well identify the same trip between obd and phone
